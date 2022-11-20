@@ -28,17 +28,16 @@ func InitPro(hostname string, port int, time_setup int) {
 		log.Println("Group creation terminated. Members are: ", ml.NumMembers())
 
 		//ogni processo invia la propria richiesta dopo un certo intervallo di tempo randomico
-		if hostname == "0" {
-			max := 15
-			min := 5
-			x := rand.Intn(max-min) + min
-			time.Sleep(time.Duration(x) * time.Second)
 
-			trying(state) //trying protocol
-			if state.GetNextRequest().Sender == hostname && state.GetAcks() == len(state.GetMembers())-1 {
-				enterCS()   //entrata CS
-				exit(state) //exit protocol
-			}
+		max := 15
+		min := 5
+		x := rand.Intn(max-min) + min
+		time.Sleep(time.Duration(x) * time.Second)
+
+		trying(state) //trying protocol
+		if state.GetNextRequest().Sender == hostname && state.GetAcks() == len(state.GetMembers())-1 {
+			enterCS()   //entrata CS
+			exit(state) //exit protocol
 		}
 
 	}()

@@ -1,0 +1,25 @@
+2022/11/20 18:31:19 [DEBUG] memberlist: Initiating push/pull sync with:  172.20.3.2:7946
+2022/11/20 18:31:19 [DEBUG] memberlist: Stream connection from=172.20.3.2:44700
+2022/11/20 18:31:19 Group Join is successfully terminated
+2022/11/20 18:31:19 RPC server is up. Listening on port 9090
+2022/11/20 18:31:19 Waiting for setup group..
+2022/11/20 18:31:20 [DEBUG] memberlist: Stream connection from=172.20.3.3:59518
+2022/11/20 18:31:20 [DEBUG] memberlist: Stream connection from=172.20.3.5:36138
+2022/11/20 18:31:20 [DEBUG] memberlist: Stream connection from=172.20.3.4:44554
+2022/11/20 18:31:29 Group creation terminated. Members are:  4
+2022/11/20 18:31:30 Sending request to other nodes:  {0 1}
+2022/11/20 18:31:30 REPLY received from:  2
+2022/11/20 18:31:30 REPLY received from:  1
+2022/11/20 18:31:30 REPLY received from:  3
+2022/11/20 18:31:30 Entering critical section for  10  seconds
+2022/11/20 18:31:31 New request to access critical section:  {1 1}
+2022/11/20 18:31:31 Added to queue
+2022/11/20 18:31:31 New request to access critical section:  {2 1}
+2022/11/20 18:31:31 Added to queue
+2022/11/20 18:31:31 New request to access critical section:  {3 1}
+2022/11/20 18:31:31 Added to queue
+2022/11/20 18:31:40 Exit from Critical Section
+2022/11/20 18:31:40 Sending REPLY to nodes in:  [{1 1} {2 1} {3 1}]
+2022/11/20 18:31:51 [DEBUG] memberlist: Initiating push/pull sync with: 2 172.20.3.5:7946
+2022/11/20 18:32:04 [DEBUG] memberlist: Stream connection from=172.20.3.4:45350
+2022/11/20 18:32:21 [DEBUG] memberlist: Initiating push/pull sync with: 2 172.20.3.5:7946

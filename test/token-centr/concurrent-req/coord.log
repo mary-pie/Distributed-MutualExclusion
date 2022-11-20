@@ -1,0 +1,29 @@
+2022/11/20 17:16:23 Group successfully initialized!
+2022/11/20 17:16:23 Waiting for setup group..
+2022/11/20 17:16:24 [DEBUG] memberlist: Stream connection from=172.20.3.3:51328
+2022/11/20 17:16:24 [DEBUG] memberlist: Stream connection from=172.20.3.4:39040
+2022/11/20 17:16:24 [DEBUG] memberlist: Stream connection from=172.20.3.5:58486
+2022/11/20 17:16:33 Group creation terminated. Members are:  4
+2022/11/20 17:16:33 V:  map[1:0 2:0 3:0]
+2022/11/20 17:16:33 RPC server is up. Listening on port 9090
+2022/11/20 17:16:34 New request to access critical section:  {2 map[1:0 2:1 3:0]}
+2022/11/20 17:16:34 Sending token to  2
+2022/11/20 17:16:34 New request to access critical section:  {1 map[1:1 2:0 3:0]}
+2022/11/20 17:16:34 Request not eligible or token not free. Added to queue:  [{1 map[1:1 2:0 3:0]}]
+2022/11/20 17:16:34 New request to access critical section:  {3 map[1:0 2:0 3:1]}
+2022/11/20 17:16:34 Request not eligible or token not free. Added to queue:  [{1 map[1:1 2:0 3:0]} {3 map[1:0 2:0 3:1]}]
+2022/11/20 17:16:51 Token resend back  {2 token123456789}
+2022/11/20 17:16:51 Queue:  [{1 map[1:1 2:0 3:0]} {3 map[1:0 2:0 3:1]}]
+2022/11/20 17:16:51 Updated V:  map[1:0 2:1 3:0]
+2022/11/20 17:16:51 Sending token  token123456789 to  1
+2022/11/20 17:17:01 [DEBUG] memberlist: Stream connection from=172.20.3.3:60310
+2022/11/20 17:17:04 Token resend back  {1 token123456789}
+2022/11/20 17:17:04 Queue:  [{3 map[1:0 2:0 3:1]}]
+2022/11/20 17:17:04 Updated V:  map[1:1 2:1 3:0]
+2022/11/20 17:17:04 Sending token  token123456789 to  3
+2022/11/20 17:17:06 [DEBUG] memberlist: Stream connection from=172.20.3.4:47434
+2022/11/20 17:17:17 Token resend back  {3 token123456789}
+2022/11/20 17:17:17 Queue:  []
+2022/11/20 17:17:17 Updated V:  map[1:1 2:1 3:1]
+2022/11/20 17:17:17 No eligible request. Waiting for new requests..
+2022/11/20 17:17:19 [DEBUG] memberlist: Initiating push/pull sync with: 3 172.20.3.5:7946

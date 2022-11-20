@@ -1,0 +1,10 @@
+2022/11/20 17:30:37 [DEBUG] memberlist: Initiating push/pull sync with:  172.20.3.2:7946
+2022/11/20 17:30:37 Group Join is successfully terminated
+2022/11/20 17:30:37 RPC server is up. Listening on port 9090
+2022/11/20 17:30:37 Waiting for setup group..
+2022/11/20 17:30:47 Group creation terminated. Members are:  4
+2022/11/20 17:30:47 Vector Clock:  map[1:0 2:0 3:0]
+2022/11/20 17:31:04 Program Message received  {1 map[1:1 2:0 3:0]}
+2022/11/20 17:31:04 New clock after received program msg:  map[1:1 2:0 3:0]
+2022/11/20 17:31:07 [DEBUG] memberlist: Initiating push/pull sync with: 3 172.20.3.4:7946
+2022/11/20 17:31:14 [DEBUG] memberlist: Stream connection from=172.20.3.4:57932

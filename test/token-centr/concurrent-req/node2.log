@@ -1,0 +1,18 @@
+2022/11/20 17:16:24 [DEBUG] memberlist: Initiating push/pull sync with:  172.20.3.2:7946
+2022/11/20 17:16:24 Group Join is successfully terminated
+2022/11/20 17:16:24 RPC server is up. Listening on port 9090
+2022/11/20 17:16:24 Waiting for setup group..
+2022/11/20 17:16:34 Group creation terminated. Members are:  4
+2022/11/20 17:16:34 Vector Clock:  map[1:0 2:0 3:0]
+2022/11/20 17:16:34 Updating Clock before send request:  map[1:0 2:1 3:0]
+2022/11/20 17:16:34 Sending program message  {1 map[1:0 2:1 3:0]}
+2022/11/20 17:16:34 Sending request  {2 map[1:0 2:1 3:0]}
+2022/11/20 17:16:34 Program Message received  {1 map[1:1 2:0 3:0]}
+2022/11/20 17:16:34 New clock after received program msg:  map[1:1 2:1 3:0]
+2022/11/20 17:16:34 Program Message received  {3 map[1:0 2:0 3:1]}
+2022/11/20 17:16:34 New clock after received program msg:  map[1:1 2:1 3:1]
+2022/11/20 17:16:41 Token received:  token123456789
+2022/11/20 17:16:41 Entering critical section for  10  seconds
+2022/11/20 17:16:51 Exit from Critical Section. Resend token to coordinator
+2022/11/20 17:16:51 Resending token back to coordinator  {2 token123456789}
+2022/11/20 17:17:06 [DEBUG] memberlist: Initiating push/pull sync with: coordinator 172.20.3.2:7946

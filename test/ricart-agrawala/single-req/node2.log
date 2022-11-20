@@ -1,0 +1,7 @@
+2022/11/20 19:15:15 [DEBUG] memberlist: Initiating push/pull sync with:  172.20.3.2:7946
+2022/11/20 19:15:15 Group Join is successfully terminated
+2022/11/20 19:15:15 RPC server is up. Listening on port 9090
+2022/11/20 19:15:15 Waiting for setup group..
+2022/11/20 19:15:25 Group creation terminated. Members are:  4
+2022/11/20 19:15:32 New request to access critical section:  {0 1}
+2022/11/20 19:15:32 send REPLY

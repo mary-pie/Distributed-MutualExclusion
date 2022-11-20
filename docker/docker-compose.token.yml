@@ -1,0 +1,56 @@
+version: "3.9"
+services:
+  coord: 
+    image: node-token:latest
+    container_name: coord
+    expose:
+      - "9090"
+      - "7946"
+    environment:
+      - MODE=coord
+    networks:
+      - net-token
+  node1: 
+    image: node-token:latest
+    container_name: node1
+    expose:
+      - "9090"
+      - "7946"
+    environment:
+      - MODE=node
+      - NODEID=1
+    depends_on:
+      - coord
+    networks:
+      - net-token
+  node2: 
+    image: node-token:latest
+    container_name: node2
+    expose:
+      - "9090"
+      - "7946"
+    environment:
+      - NODEID=2
+      - MODE=node
+    depends_on:
+      - coord
+    networks:
+      - net-token   
+  node3: 
+    image: node-token:latest
+    container_name: node3
+    expose:
+      - "9090"
+      - "7946"
+    environment:
+      - NODEID=3
+      - MODE=node
+    depends_on:
+      - coord
+    networks:
+      - net-token  
+networks:
+  net-token:
+    ipam:
+      config:
+        - subnet: 172.20.0.0/24

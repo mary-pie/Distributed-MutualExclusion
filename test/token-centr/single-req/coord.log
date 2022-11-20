@@ -1,0 +1,15 @@
+2022/11/20 17:30:35 Group successfully initialized!
+2022/11/20 17:30:35 Waiting for setup group..
+2022/11/20 17:30:37 [DEBUG] memberlist: Stream connection from=172.20.3.3:53872
+2022/11/20 17:30:37 [DEBUG] memberlist: Stream connection from=172.20.3.4:48146
+2022/11/20 17:30:37 [DEBUG] memberlist: Stream connection from=172.20.3.5:44144
+2022/11/20 17:30:45 Group creation terminated. Members are:  4
+2022/11/20 17:30:45 V:  map[1:0 2:0 3:0]
+2022/11/20 17:30:45 RPC server is up. Listening on port 9090
+2022/11/20 17:31:04 New request to access critical section:  {1 map[1:1 2:0 3:0]}
+2022/11/20 17:31:04 Sending token to  1
+2022/11/20 17:31:10 [DEBUG] memberlist: Initiating push/pull sync with: 3 172.20.3.4:7946
+2022/11/20 17:31:25 Token resend back  {1 token123456789}
+2022/11/20 17:31:25 Queue:  []
+2022/11/20 17:31:25 Updated V:  map[1:1 2:0 3:0]
+2022/11/20 17:31:25 No eligible request. Waiting for new requests..

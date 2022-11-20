@@ -1,0 +1,22 @@
+2022/11/20 19:45:06 [DEBUG] memberlist: Stream connection from=172.20.4.2:50762
+2022/11/20 19:45:06 [DEBUG] memberlist: Initiating push/pull sync with:  172.20.4.2:7946
+2022/11/20 19:45:06 Group Join is successfully terminated
+2022/11/20 19:45:06 RPC server is up. Listening on port 9090
+2022/11/20 19:45:06 Waiting for setup group..
+2022/11/20 19:45:07 [DEBUG] memberlist: Stream connection from=172.20.4.3:45570
+2022/11/20 19:45:07 [DEBUG] memberlist: Stream connection from=172.20.4.4:56154
+2022/11/20 19:45:07 [DEBUG] memberlist: Stream connection from=172.20.4.5:34870
+2022/11/20 19:45:16 Group creation terminated. Members are:  4
+2022/11/20 19:45:30 Sending request to other nodes:  {0 1}
+2022/11/20 19:45:30 ACK received from:  2
+2022/11/20 19:45:30 Updated Clock:  2
+2022/11/20 19:45:30 ACK received from:  3
+2022/11/20 19:45:30 Updated Clock:  3
+2022/11/20 19:45:30 ACK received from:  1
+2022/11/20 19:45:30 Updated Clock:  4
+2022/11/20 19:45:30 Entering critical section for  13  seconds
+2022/11/20 19:45:38 [DEBUG] memberlist: Initiating push/pull sync with: 2 172.20.4.5:7946
+2022/11/20 19:45:43 Exit from Critical Section
+2022/11/20 19:45:43 Deleted my request from queue  []
+2022/11/20 19:45:43 Empty queue.. 
+2022/11/20 19:45:43 Sending RELEASE to other nodes

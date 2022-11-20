@@ -1,0 +1,53 @@
+version: "3.9"
+services:
+  node0: 
+    image: node-lamport:latest
+    container_name: node0-lam
+    expose:
+      - "9090"
+      - "7946"
+    environment:
+      - NODEID=0
+    networks:
+      - net-lamport
+  node1: 
+    image: node-lamport:latest
+    container_name: node1-lam
+    expose:
+      - "9090"
+      - "7946"
+    environment:
+      - NODEID=1
+    depends_on:
+      - node0
+    networks:
+      - net-lamport
+  node2: 
+    image: node-lamport:latest
+    container_name: node2-lam
+    expose:
+      - "9090"
+      - "7946"
+    environment:
+      - NODEID=2      
+    depends_on:
+      - node0
+    networks:
+      - net-lamport   
+  node3: 
+    image: node-lamport:latest
+    container_name: node3-lam
+    expose:
+      - "9090"
+      - "7946"
+    environment:
+      - NODEID=3      
+    depends_on:
+      - node0
+    networks:
+      - net-lamport 
+networks:
+  net-lamport:
+    ipam:
+      config:
+        - subnet: 172.20.2.0/24

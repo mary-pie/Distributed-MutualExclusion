@@ -1,0 +1,53 @@
+version: "3.9"
+services:
+  node0: 
+    image: node-ra:latest
+    container_name: node0-ra
+    expose:
+      - "9090"
+      - "7946"
+    environment:
+      - NODEID=0      
+    networks:
+      - net-ra
+  node1: 
+    image: node-ra:latest
+    container_name: node1-ra
+    expose:
+      - "9090"
+      - "7946"
+    environment:
+      - NODEID=1     
+    depends_on:
+      - node0
+    networks:
+      - net-ra
+  node2: 
+    image: node-ra:latest
+    container_name: node2-ra
+    expose:
+      - "9090"
+      - "7946"
+    environment:
+      - NODEID=2     
+    depends_on:
+      - node0
+    networks:
+      - net-ra
+  node3: 
+    image: node-ra:latest
+    container_name: node3-ra
+    expose:
+      - "9090"
+      - "7946"
+    environment:
+      - NODEID=3     
+    depends_on:
+      - node0
+    networks:
+      - net-ra  
+networks:
+  net-ra:
+    ipam:
+      config:
+        - subnet: 172.20.1.0/24

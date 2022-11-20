@@ -1,0 +1,17 @@
+2022/11/20 19:15:15 [DEBUG] memberlist: Initiating push/pull sync with:  172.20.3.2:7946
+2022/11/20 19:15:15 [DEBUG] memberlist: Stream connection from=172.20.3.2:54096
+2022/11/20 19:15:15 Group Join is successfully terminated
+2022/11/20 19:15:15 RPC server is up. Listening on port 9090
+2022/11/20 19:15:15 Waiting for setup group..
+2022/11/20 19:15:15 [DEBUG] memberlist: Stream connection from=172.20.3.4:41438
+2022/11/20 19:15:16 [DEBUG] memberlist: Stream connection from=172.20.3.3:46224
+2022/11/20 19:15:16 [DEBUG] memberlist: Stream connection from=172.20.3.5:54062
+2022/11/20 19:15:25 Group creation terminated. Members are:  4
+2022/11/20 19:15:32 Sending request to other nodes:  {0 1}
+2022/11/20 19:15:32 REPLY received from:  2
+2022/11/20 19:15:32 REPLY received from:  3
+2022/11/20 19:15:32 REPLY received from:  1
+2022/11/20 19:15:32 Entering critical section for  10  seconds
+2022/11/20 19:15:42 Exit from Critical Section
+2022/11/20 19:15:42 Sending REPLY to nodes in:  []
+2022/11/20 19:15:47 [DEBUG] memberlist: Failed UDP ping: 3 (timeout reached)

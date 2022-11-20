@@ -1,0 +1,40 @@
+2022/11/20 15:50:02 [DEBUG] memberlist: Initiating push/pull sync with:  172.20.2.2:7946
+2022/11/20 15:50:02 Group Join is successfully terminated
+2022/11/20 15:50:02 RPC server is up. Listening on port 9090
+2022/11/20 15:50:02 Waiting for setup group..
+2022/11/20 15:50:12 Group creation terminated. Members are:  4
+2022/11/20 15:50:19 Sending request to other nodes:  {1 1}
+2022/11/20 15:50:19 ACK received from:  0
+2022/11/20 15:50:19 Updated Clock:  2
+2022/11/20 15:50:19 ACK received from:  2
+2022/11/20 15:50:19 Updated Clock:  3
+2022/11/20 15:50:19 ACK received from:  3
+2022/11/20 15:50:19 Updated Clock:  4
+2022/11/20 15:50:19 Entering critical section for  12  seconds
+2022/11/20 15:50:20 New REQUEST message  {2 3}
+2022/11/20 15:50:20 Updated Clock:  5
+2022/11/20 15:50:20 Added in queue:  [{1 1} {2 3}]
+2022/11/20 15:50:20 Sent ACK  {ACK 5}
+2022/11/20 15:50:22 New REQUEST message  {0 5}
+2022/11/20 15:50:22 Updated Clock:  6
+2022/11/20 15:50:22 Added in queue:  [{1 1} {2 3} {0 5}]
+2022/11/20 15:50:22 Sent ACK  {ACK 6}
+2022/11/20 15:50:22 New REQUEST message  {3 7}
+2022/11/20 15:50:22 Updated Clock:  8
+2022/11/20 15:50:22 Added in queue:  [{1 1} {2 3} {0 5} {3 7}]
+2022/11/20 15:50:22 Sent ACK  {ACK 8}
+2022/11/20 15:50:31 Exit from Critical Section
+2022/11/20 15:50:31 Deleted my request from queue  [{2 3} {0 5} {3 7}]
+2022/11/20 15:50:31 Sending RELEASE to other nodes
+2022/11/20 15:50:40 [DEBUG] memberlist: Stream connection from=172.20.2.4:51234
+2022/11/20 15:50:44 New RELEASE message  {2  11}
+2022/11/20 15:50:44 Updated Clock:  12
+2022/11/20 15:50:44 Deleted request from queue  [{0 5} {3 7}]
+2022/11/20 15:50:52 [DEBUG] memberlist: Initiating push/pull sync with: 2 172.20.2.3:7946
+2022/11/20 15:50:57 New RELEASE message  {0  13}
+2022/11/20 15:50:57 Updated Clock:  14
+2022/11/20 15:50:57 Deleted request from queue  [{3 7}]
+2022/11/20 15:51:10 New RELEASE message  {3  15}
+2022/11/20 15:51:10 Updated Clock:  16
+2022/11/20 15:51:10 Deleted request from queue  []
+2022/11/20 15:51:10 Empty queue.. 

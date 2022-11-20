@@ -1,0 +1,42 @@
+2022/11/20 15:50:01 [DEBUG] memberlist: Initiating push/pull sync with:  172.20.2.2:7946
+2022/11/20 15:50:01 Group Join is successfully terminated
+2022/11/20 15:50:01 RPC server is up. Listening on port 9090
+2022/11/20 15:50:01 Waiting for setup group..
+2022/11/20 15:50:11 Group creation terminated. Members are:  4
+2022/11/20 15:50:19 New REQUEST message  {1 1}
+2022/11/20 15:50:19 Updated Clock:  2
+2022/11/20 15:50:19 Added in queue:  [{1 1}]
+2022/11/20 15:50:19 Sent ACK  {ACK 2}
+2022/11/20 15:50:20 New REQUEST message  {2 3}
+2022/11/20 15:50:20 Updated Clock:  4
+2022/11/20 15:50:20 Added in queue:  [{1 1} {2 3}]
+2022/11/20 15:50:20 Sent ACK  {ACK 4}
+2022/11/20 15:50:22 New REQUEST message  {0 5}
+2022/11/20 15:50:22 Updated Clock:  6
+2022/11/20 15:50:22 Added in queue:  [{1 1} {2 3} {0 5}]
+2022/11/20 15:50:22 Sent ACK  {ACK 6}
+2022/11/20 15:50:22 Sending request to other nodes:  {3 7}
+2022/11/20 15:50:22 ACK received from:  2
+2022/11/20 15:50:22 Updated Clock:  8
+2022/11/20 15:50:22 ACK received from:  1
+2022/11/20 15:50:22 Updated Clock:  9
+2022/11/20 15:50:22 ACK received from:  0
+2022/11/20 15:50:22 Updated Clock:  10
+2022/11/20 15:50:31 New RELEASE message  {1  9}
+2022/11/20 15:50:31 Updated Clock:  11
+2022/11/20 15:50:31 Deleted request from queue  [{2 3} {0 5} {3 7}]
+2022/11/20 15:50:40 [DEBUG] memberlist: Initiating push/pull sync with: 1 172.20.2.5:7946
+2022/11/20 15:50:44 New RELEASE message  {2  11}
+2022/11/20 15:50:44 Updated Clock:  12
+2022/11/20 15:50:44 Deleted request from queue  [{0 5} {3 7}]
+2022/11/20 15:50:47 [DEBUG] memberlist: Stream connection from=172.20.2.2:43756
+2022/11/20 15:50:56 [DEBUG] memberlist: Stream connection from=172.20.2.3:47056
+2022/11/20 15:50:57 New RELEASE message  {0  13}
+2022/11/20 15:50:57 Updated Clock:  14
+2022/11/20 15:50:57 Deleted request from queue  [{3 7}]
+2022/11/20 15:50:57 Entering critical section for  13  seconds
+2022/11/20 15:51:10 Exit from Critical Section
+2022/11/20 15:51:10 Deleted my request from queue  []
+2022/11/20 15:51:10 Empty queue.. 
+2022/11/20 15:51:10 Sending RELEASE to other nodes
+2022/11/20 15:51:10 [DEBUG] memberlist: Initiating push/pull sync with: 2 172.20.2.3:7946

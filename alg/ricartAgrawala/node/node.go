@@ -101,6 +101,7 @@ se riceve REPLY incrementa il # di reply ricevuti
 */
 func sendRequest(ml []*memberlist.Node, req RequestPayload, hostname string, state *utils.State) {
 	log.Println("Sending request to other nodes: ", req)
+	var reply string
 	for _, m := range ml {
 		if m.Name != hostname {
 			addr := m.Addr.String() + ":9090"
@@ -109,7 +110,6 @@ func sendRequest(ml []*memberlist.Node, req RequestPayload, hostname string, sta
 				log.Fatal("Error in dialing: ", err)
 			}
 
-			var reply string
 			call := client.Go("MutualExclusion.AccessCS", req, &reply, nil)
 			call = <-call.Done
 			if reply == "REPLY" {

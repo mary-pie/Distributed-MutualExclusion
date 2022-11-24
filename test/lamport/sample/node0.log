@@ -1,44 +1,45 @@
-2022/11/20 15:50:00 [DEBUG] memberlist: Initiating push/pull sync with:  172.20.2.2:7946
-2022/11/20 15:50:00 [DEBUG] memberlist: Stream connection from=172.20.2.2:58642
-2022/11/20 15:50:00 Group Join is successfully terminated
-2022/11/20 15:50:00 RPC server is up. Listening on port 9090
-2022/11/20 15:50:00 Waiting for setup group..
-2022/11/20 15:50:01 [DEBUG] memberlist: Stream connection from=172.20.2.3:44264
-2022/11/20 15:50:01 [DEBUG] memberlist: Stream connection from=172.20.2.4:54006
-2022/11/20 15:50:02 [DEBUG] memberlist: Stream connection from=172.20.2.5:37572
-2022/11/20 15:50:10 Group creation terminated. Members are:  4
-2022/11/20 15:50:19 New REQUEST message  {1 1}
-2022/11/20 15:50:19 Updated Clock:  2
-2022/11/20 15:50:19 Added in queue:  [{1 1}]
-2022/11/20 15:50:19 Sent ACK  {ACK 2}
-2022/11/20 15:50:20 New REQUEST message  {2 3}
-2022/11/20 15:50:20 Updated Clock:  4
-2022/11/20 15:50:20 Added in queue:  [{1 1} {2 3}]
-2022/11/20 15:50:20 Sent ACK  {ACK 4}
-2022/11/20 15:50:22 Sending request to other nodes:  {0 5}
-2022/11/20 15:50:22 ACK received from:  1
-2022/11/20 15:50:22 Updated Clock:  6
-2022/11/20 15:50:22 ACK received from:  3
-2022/11/20 15:50:22 Updated Clock:  7
-2022/11/20 15:50:22 ACK received from:  2
-2022/11/20 15:50:22 Updated Clock:  8
-2022/11/20 15:50:22 New REQUEST message  {3 7}
-2022/11/20 15:50:22 Updated Clock:  9
-2022/11/20 15:50:22 Added in queue:  [{1 1} {2 3} {0 5} {3 7}]
-2022/11/20 15:50:22 Sent ACK  {ACK 9}
-2022/11/20 15:50:31 New RELEASE message  {1  9}
-2022/11/20 15:50:31 Updated Clock:  10
-2022/11/20 15:50:31 Deleted request from queue  [{2 3} {0 5} {3 7}]
-2022/11/20 15:50:44 New RELEASE message  {2  11}
-2022/11/20 15:50:44 Updated Clock:  12
-2022/11/20 15:50:44 Deleted request from queue  [{0 5} {3 7}]
-2022/11/20 15:50:44 Entering critical section for  13  seconds
-2022/11/20 15:50:47 [DEBUG] memberlist: Initiating push/pull sync with: 3 172.20.2.4:7946
-2022/11/20 15:50:57 Exit from Critical Section
-2022/11/20 15:50:57 Deleted my request from queue  [{3 7}]
-2022/11/20 15:50:57 Sending RELEASE to other nodes
-2022/11/20 15:51:10 New RELEASE message  {3  15}
-2022/11/20 15:51:10 Updated Clock:  16
-2022/11/20 15:51:10 Deleted request from queue  []
-2022/11/20 15:51:10 Empty queue.. 
-2022/11/20 15:51:17 [DEBUG] memberlist: Initiating push/pull sync with: 2 172.20.2.3:7946
+2022/11/24 21:39:48 [DEBUG] memberlist: Initiating push/pull sync with:  172.20.2.2:7946
+2022/11/24 21:39:48 [DEBUG] memberlist: Stream connection from=172.20.2.2:52090
+2022/11/24 21:39:48 Group Join is successfully terminated
+2022/11/24 21:39:48 RPC server is up. Listening on port 9090
+2022/11/24 21:39:48 Waiting for setup group..
+2022/11/24 21:39:49 [DEBUG] memberlist: Stream connection from=172.20.2.3:59028
+2022/11/24 21:39:49 [DEBUG] memberlist: Stream connection from=172.20.2.4:50618
+2022/11/24 21:39:49 [DEBUG] memberlist: Stream connection from=172.20.2.5:34928
+2022/11/24 21:39:58 Group creation terminated. Members are:  4
+2022/11/24 21:40:05 New REQUEST message  {2 1}
+2022/11/24 21:40:05 Updated Clock:  2
+2022/11/24 21:40:05 Added in queue:  [{2 1}]
+2022/11/24 21:40:05 Sent ACK  {ACK 3}
+2022/11/24 21:40:06 New REQUEST message  {1 4}
+2022/11/24 21:40:06 Updated Clock:  5
+2022/11/24 21:40:06 Added in queue:  [{2 1} {1 4}]
+2022/11/24 21:40:06 Sent ACK  {ACK 6}
+2022/11/24 21:40:12 Sending request to other nodes:  {0 7}
+2022/11/24 21:40:12 ACK received from:  3
+2022/11/24 21:40:12 Updated Clock:  8
+2022/11/24 21:40:12 ACK received from:  2
+2022/11/24 21:40:12 Updated Clock:  8
+2022/11/24 21:40:12 ACK received from:  1
+2022/11/24 21:40:12 Updated Clock:  8
+2022/11/24 21:40:13 New REQUEST message  {3 10}
+2022/11/24 21:40:13 Updated Clock:  11
+2022/11/24 21:40:13 Added in queue:  [{2 1} {1 4} {0 7} {3 10}]
+2022/11/24 21:40:13 Sent ACK  {ACK 12}
+2022/11/24 21:40:18 New RELEASE message  {2 13}
+2022/11/24 21:40:18 Updated Clock:  14
+2022/11/24 21:40:18 Deleted request from queue  [{1 4} {0 7} {3 10}]
+2022/11/24 21:40:29 New RELEASE message  {1 15}
+2022/11/24 21:40:29 Updated Clock:  16
+2022/11/24 21:40:29 Deleted request from queue  [{0 7} {3 10}]
+2022/11/24 21:40:29 Entering critical section for  13  seconds
+2022/11/24 21:40:36 [DEBUG] memberlist: Initiating push/pull sync with: 1 172.20.2.4:7946
+2022/11/24 21:40:42 Exit from Critical Section
+2022/11/24 21:40:42 Deleted my request from queue  [{3 10}]
+2022/11/24 21:40:42 Sending RELEASE to other nodes
+2022/11/24 21:40:42 [DEBUG] memberlist: Stream connection from=172.20.2.4:45710
+2022/11/24 21:40:53 [DEBUG] memberlist: Stream connection from=172.20.2.5:60758
+2022/11/24 21:40:56 New RELEASE message  {3 19}
+2022/11/24 21:40:56 Updated Clock:  20
+2022/11/24 21:40:56 Deleted request from queue  []
+2022/11/24 21:40:56 Empty queue.. 

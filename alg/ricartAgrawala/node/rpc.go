@@ -41,7 +41,7 @@ func (me *MutualExclusion) AccessCS(req RequestPayload, res *Reply) error {
 /*
 Handler che gestisce la ricezione di msg REPLY:
 aggiorno il # di reply ricevuti
-se #replies = n-1, entro nella sezione critica, se
+se #replies = n-1, entro nella sezione critica
 */
 func (me *MutualExclusion) Reply(req Reply, res *string) error {
 	s := me.state

@@ -13,7 +13,6 @@ type RequestPayload struct {
 }
 type ReleasePayload struct {
 	SenderId  string
-	Msg       string
 	Timestamp int
 }
 
@@ -45,6 +44,7 @@ func (me *MutualExclusion) AccessCS(req RequestPayload, res *AckMsg) error {
 
 	s.AddRequest(utils.Request{Sender: req.SenderId, Timestamp: req.Timestamp}) //aggiunta nella coda
 	log.Println("Added in queue: ", s.GetQueue())
+	s.IncreaseClock()                //incremento clock prima di inviare la risposta
 	*res = AckMsg{Ack, s.GetClock()} //invio ack
 	log.Println("Sent ACK ", *res)
 
@@ -52,7 +52,7 @@ func (me *MutualExclusion) AccessCS(req RequestPayload, res *AckMsg) error {
 }
 
 /*
-Handler che gestisce le richieste di accesso alla CS:
+Handler che gestisce la ricezione dei messaggi di RELEASE:
 eliminino richiesta corrispondente dalla coda
 se la sua richiesta è la prossima a dover essere processata e num_acks = n-1 --> accesso alla CS
 */

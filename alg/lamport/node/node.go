@@ -121,7 +121,9 @@ func sendRequest(ml []*memberlist.Node, req RequestPayload, state *utils.State) 
 			}
 			state.IncreaseClock() //clock += 1
 			log.Println("Updated Clock: ", state.GetClock())
-			state.IncreaseAcks() //num_acks += 1
+			if ack.Timestamp > req.Timestamp {
+				state.IncreaseAcks() //num_acks += 1
+			}
 
 			if call.Error != nil {
 				log.Fatal("Error in Access Critical Section: ", call.Error.Error())
@@ -136,6 +138,7 @@ Funzione per effettuare una chiamata RPC di RELEASE dopo l'uscita dalla sezione 
 */
 func sendRelease(ml []*memberlist.Node, rel ReleasePayload) {
 	log.Println("Sending RELEASE to other nodes")
+	var reply string
 	for _, m := range ml {
 		if m.Name != rel.SenderId {
 			addr := m.Addr.String() + ":9090"
@@ -143,7 +146,6 @@ func sendRelease(ml []*memberlist.Node, rel ReleasePayload) {
 			if err != nil {
 				log.Fatal("Error in dialing: ", err)
 			}
-			var reply string
 			call := client.Go("MutualExclusion.Release", rel, &reply, nil)
 
 			if call.Error != nil {

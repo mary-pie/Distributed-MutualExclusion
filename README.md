@@ -26,13 +26,13 @@ cd Distributed-MutualExclusion
 ## Run app with Compose
 1. Token-based centralized
 	```
-	docker compose -p token-centr -f docker/docker-compose.token.yml up
+	docker-compose -p token-centr -f docker/docker-compose.token.yml up
 	```
 2. Lamport
 	```
-	docker compose -p lamport -f docker/docker-compose.lamport.yml up
+	docker-compose -p lamport -f docker/docker-compose.lamport.yml up
 	```
 3. Ricart-Agrawala
 	```
-	docker compose -p ricart-agrawala -f docker/docker-compose.ricartagrawala.yml up
+	docker-compose -p ricart-agrawala -f docker/docker-compose.ricartagrawala.yml up
 	```

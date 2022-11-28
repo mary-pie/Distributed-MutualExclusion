@@ -6,7 +6,7 @@
 2022/11/20 19:45:30 New REQUEST message  {0 1}
 2022/11/20 19:45:30 Updated Clock:  2
 2022/11/20 19:45:30 Added in queue:  [{0 1}]
-2022/11/20 19:45:30 Sent ACK  {ACK 2}
+2022/11/20 19:45:30 Sent ACK  {ACK 3}
 2022/11/20 19:45:43 New RELEASE message  {0  5}
 2022/11/20 19:45:43 Updated Clock:  6
 2022/11/20 19:45:43 Deleted request from queue  []

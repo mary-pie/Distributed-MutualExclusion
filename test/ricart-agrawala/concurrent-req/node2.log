@@ -1,22 +1,21 @@
-2022/11/20 18:31:20 [DEBUG] memberlist: Initiating push/pull sync with:  172.20.3.2:7946
-2022/11/20 18:31:20 Group Join is successfully terminated
-2022/11/20 18:31:20 RPC server is up. Listening on port 9090
-2022/11/20 18:31:20 Waiting for setup group..
-2022/11/20 18:31:30 New request to access critical section:  {0 1}
-2022/11/20 18:31:30 send REPLY
-2022/11/20 18:31:30 Group creation terminated. Members are:  4
-2022/11/20 18:31:31 New request to access critical section:  {1 1}
-2022/11/20 18:31:31 send REPLY
-2022/11/20 18:31:31 Sending request to other nodes:  {2 1}
-2022/11/20 18:31:31 REPLY received from:  3
-2022/11/20 18:31:31 New request to access critical section:  {3 1}
-2022/11/20 18:31:31 Added to queue
-2022/11/20 18:31:40 New REPLY received. Total replies currently received 2
-2022/11/20 18:31:50 New REPLY received. Total replies currently received 3
-2022/11/20 18:31:50 Entering critical section for  13  seconds
-2022/11/20 18:31:51 [DEBUG] memberlist: Stream connection from=172.20.3.2:53080
-2022/11/20 18:31:58 [DEBUG] memberlist: Stream connection from=172.20.3.3:51060
-2022/11/20 18:32:03 Exit from Critical Section
-2022/11/20 18:32:03 Sending REPLY to nodes in:  [{3 1}]
-2022/11/20 18:32:17 [DEBUG] memberlist: Initiating push/pull sync with: 3 172.20.3.4:7946
-2022/11/20 18:32:21 [DEBUG] memberlist: Stream connection from=172.20.3.2:33636
+2022/11/27 23:49:06 [DEBUG] memberlist: Initiating push/pull sync with:  172.20.1.2:7946
+2022/11/27 23:49:06 Group Join is successfully terminated
+2022/11/27 23:49:06 RPC server is up. Listening on port 9090
+2022/11/27 23:49:06 Waiting for setup group..
+2022/11/27 23:49:16 Group creation terminated. Members are:  4
+2022/11/27 23:49:20 New request to access critical section:  {0 1}
+2022/11/27 23:49:20 send REPLY  {2 3}
+2022/11/27 23:49:21 New request to access critical section:  {1 1}
+2022/11/27 23:49:21 send REPLY  {2 5}
+2022/11/27 23:49:21 Sending request to other nodes:  {2 1}
+2022/11/27 23:49:21 REPLY received  {3 7}
+2022/11/27 23:49:21 New request to access critical section:  {3 1}
+2022/11/27 23:49:21 Added to queue  [{3 1}]
+2022/11/27 23:49:30 New REPLY received  {0 10} . Total replies currently received 2
+2022/11/27 23:49:41 New REPLY received  {1 12} . Total replies currently received 3
+2022/11/27 23:49:41 Entering critical section for  10  seconds
+2022/11/27 23:49:43 [DEBUG] memberlist: Stream connection from=172.20.1.3:38868
+2022/11/27 23:49:46 [DEBUG] memberlist: Initiating push/pull sync with: 3 172.20.1.5:7946
+2022/11/27 23:49:51 Exit from Critical Section
+2022/11/27 23:49:51 Sending REPLY  {2 14} to nodes in:  [{3 1}]
+2022/11/27 23:50:08 [DEBUG] memberlist: Stream connection from=172.20.1.2:41828

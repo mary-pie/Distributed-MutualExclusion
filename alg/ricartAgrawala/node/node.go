@@ -27,6 +27,7 @@ func InitProc(hostname string, port int, time_setup int) {
 		log.Println("Group creation terminated. Members are: ", ml.NumMembers())
 
 		//ogni processo invia la propria richiesta dopo un certo intervallo di tempo randomico
+
 		max := 15
 		min := 5
 		x := rand.Intn(max-min) + min
@@ -38,6 +39,7 @@ func InitProc(hostname string, port int, time_setup int) {
 			enterCS()                 //entrata CS
 			exit(state)               //exit protocol
 		}
+
 	}()
 
 	initServerRpc(state) //init server RPC
@@ -101,7 +103,6 @@ se riceve REPLY incrementa il # di reply ricevuti
 */
 func sendRequest(ml []*memberlist.Node, req RequestPayload, hostname string, state *utils.State) {
 	log.Println("Sending request to other nodes: ", req)
-	var reply string
 	for _, m := range ml {
 		if m.Name != hostname {
 			addr := m.Addr.String() + ":9090"
@@ -109,11 +110,13 @@ func sendRequest(ml []*memberlist.Node, req RequestPayload, hostname string, sta
 			if err != nil {
 				log.Fatal("Error in dialing: ", err)
 			}
-
-			call := client.Go("MutualExclusion.AccessCS", req, &reply, nil)
+			reply := new(Reply)
+			call := client.Go("MutualExclusion.AccessCS", req, reply, nil)
 			call = <-call.Done
-			if reply == "REPLY" {
-				log.Println("REPLY received from: ", m.Name)
+
+			if reply.SenderId != "" {
+				state.UpdateClock(reply.Timestamp)
+				log.Println("REPLY received ", *reply)
 				state.IncreaseReplies()
 			}
 			if call.Error != nil {
@@ -127,10 +130,9 @@ func sendRequest(ml []*memberlist.Node, req RequestPayload, hostname string, sta
 /*
 Funzione per effettuare una chiamata RPC di send REPLY che invia la risposta alle richieste in coda
 */
-func sendReply(queue []utils.Request, ml []*memberlist.Node) {
-	var rep Reply = "REPLY"
+func sendReply(queue []utils.Request, ml []*memberlist.Node, rep Reply) {
 	var res string
-	log.Println("Sending REPLY to nodes in: ", queue)
+	log.Println("Sending REPLY ", rep, "to nodes in: ", queue)
 
 	//init mappa di id dei processi in coda
 	waiting_reply := map[string]int{}
@@ -145,7 +147,7 @@ func sendReply(queue []utils.Request, ml []*memberlist.Node) {
 			if err != nil {
 				log.Fatal("Error in dialing: ", err)
 			}
-			call := client.Go("MutualExclusion.Reply", rep, &res, nil)
+			call := client.Go("MutualExclusion.ReceiveReply", rep, &res, nil)
 
 			if call.Error != nil {
 				log.Fatal("Error in Access Critical Section: ", call.Error.Error())
@@ -159,8 +161,8 @@ func sendReply(queue []utils.Request, ml []*memberlist.Node) {
 Istruzioni che precedono l'accesso alla sezione critica
 */
 func trying(state *utils.State) {
-	state.SetStatus(utils.Requesting) //Status <-- Requesting
-	state.IncreaseClock()             // clock += + 1
+	state.SetStatus(utils.Requesting) //Status --> Requesting
+	state.IncreaseClock()             // incremento clock prima dell'invio di una richiesta
 
 	/*Test richieste concorrenti
 	state.SetLastReq(1)
@@ -191,7 +193,14 @@ Invio reply ai nodi nella coda delle richieste pendenti
 Reset stato
 */
 func exit(state *utils.State) {
-	sendReply(state.GetQueue(), state.GetMembers())
+
+	if len(state.GetQueue()) == 0 {
+		log.Println("Empy queue ", state.GetQueue())
+	} else {
+		state.IncreaseClock() // incremento clock prima dell'invio di REPLY
+		sendReply(state.GetQueue(), state.GetMembers(), Reply{SenderId: state.GetHostname(), Timestamp: state.GetClock()})
+	}
+
 	state.ResetState()
 }
 

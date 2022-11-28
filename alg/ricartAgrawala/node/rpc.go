@@ -10,7 +10,10 @@ type RequestPayload struct {
 	Timestamp int
 }
 
-type Reply string
+type Reply struct {
+	SenderId  string
+	Timestamp int
+}
 
 type MutualExclusion struct {
 	state *utils.State
@@ -20,33 +23,33 @@ type MutualExclusion struct {
 Handler che gestisce le richieste di accesso alla CS:
 se Status=CS oppure (se Status=Requesting {LastReq, id} < {req.Timestamp, req.SenderId}), accodo la richiesta
 altrimenti invio REPLY
-aggiorno clock = max{req.Timestamp, clock}
 */
 func (me *MutualExclusion) AccessCS(req RequestPayload, res *Reply) error {
 	log.Println("New request to access critical section: ", req)
 	s := me.state
+
+	s.UpdateClock(req.Timestamp) //aggiornamento clock
 	if s.GetStatus() == "CS" || (s.GetStatus() == "Requesting" && compareRequest(req, s.GetLastReq(), s.GetHostname())) {
 		s.AddRequest(utils.Request{Sender: req.SenderId, Timestamp: req.Timestamp})
-		log.Println("Added to queue")
+		log.Println("Added to queue ", s.GetQueue())
+		*res = Reply{} //invio Reply vuoto
 	} else {
-		log.Println("send REPLY")
-		*res = "REPLY"
-	}
-	if req.Timestamp > s.GetClock() {
-		s.SetClock(req.Timestamp)
+		s.IncreaseClock() //incremento clock prima di invio REPLY
+		*res = Reply{SenderId: s.GetHostname(), Timestamp: s.GetClock()}
+		log.Println("send REPLY ", *res)
 	}
 	return nil
 }
 
 /*
 Handler che gestisce la ricezione di msg REPLY:
-aggiorno il # di reply ricevuti
 se #replies = n-1, entro nella sezione critica
 */
-func (me *MutualExclusion) Reply(req Reply, res *string) error {
+func (me *MutualExclusion) ReceiveReply(rep Reply, res *string) error {
 	s := me.state
-	me.state.IncreaseReplies()
-	log.Println("New REPLY received. Total replies currently received", s.GetReplies())
+	me.state.IncreaseReplies() //aggiorno il # di reply ricevuti
+	log.Println("New REPLY received ", rep, ". Total replies currently received", s.GetReplies())
+	s.UpdateClock(rep.Timestamp) //aggiornamento clock
 
 	if me.state.GetReplies() == len(s.GetMembers())-1 {
 		s.SetStatus(utils.CS)

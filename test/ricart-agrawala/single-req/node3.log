@@ -1,7 +1,7 @@
-2022/11/20 19:15:16 [DEBUG] memberlist: Initiating push/pull sync with:  172.20.3.2:7946
-2022/11/20 19:15:16 Group Join is successfully terminated
-2022/11/20 19:15:16 Waiting for setup group..
-2022/11/20 19:15:16 RPC server is up. Listening on port 9090
-2022/11/20 19:15:26 Group creation terminated. Members are:  4
-2022/11/20 19:15:32 New request to access critical section:  {0 1}
-2022/11/20 19:15:32 send REPLY
+2022/11/27 23:31:50 [DEBUG] memberlist: Initiating push/pull sync with:  172.20.1.2:7946
+2022/11/27 23:31:50 Group Join is successfully terminated
+2022/11/27 23:31:50 RPC server is up. Listening on port 9090
+2022/11/27 23:31:50 Waiting for setup group..
+2022/11/27 23:32:00 Group creation terminated. Members are:  4
+2022/11/27 23:32:13 New request to access critical section:  {0 1}
+2022/11/27 23:32:13 send REPLY  {3 3}

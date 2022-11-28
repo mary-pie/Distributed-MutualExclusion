@@ -97,3 +97,14 @@ func (s *State) ResetState() {
 	s.num_reply = 0              //azzero replies
 	s.SetStatus(NCS)             //status a NCS
 }
+
+/*
+Funziona di aggiornamento del clock alla ricezione di un msg:
+clock = max{req.Timestamp, clock} + 1
+*/
+func (s *State) UpdateClock(timestamp int) {
+	if timestamp > s.clock {
+		s.SetClock(timestamp)
+	}
+	s.IncreaseClock()
+}
